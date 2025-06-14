@@ -1,0 +1,10 @@
+#!/usr/bin/env python3
+
+import sys
+from rqt_gui.main import Main
+from macro_vts.vts import MacroVTS
+
+# macro_vts.vts_plugin 모듈의 VTSPlugin 클래스를 standalone으로 실행
+plugin = 'macro_vts.vts.MacroVTS'
+main = Main(filename=plugin)
+sys.exit(main.main(standalone=plugin))

@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>626</width>
+    <height>333</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QLCDNumber" name="lcd_number_pos_x">
+   <property name="geometry">
+    <rect>
+     <x>15</x>
+     <y>17</y>
+     <width>101</width>
+     <height>41</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLCDNumber" name="lcd_number_pos_y">
+   <property name="geometry">
+    <rect>
+     <x>155</x>
+     <y>17</y>
+     <width>101</width>
+     <height>41</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLCDNumber" name="lcd_number_yaw">
+   <property name="geometry">
+    <rect>
+     <x>155</x>
+     <y>77</y>
+     <width>101</width>
+     <height>41</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLCDNumber" name="lcd_number_vel">
+   <property name="geometry">
+    <rect>
+     <x>15</x>
+     <y>77</y>
+     <width>101</width>
+     <height>41</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lable_ms">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>100</y>
+     <width>30</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+     <weight>75</weight>
+     <italic>true</italic>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>m/s</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_x">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>40</y>
+     <width>30</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+     <weight>75</weight>
+     <italic>true</italic>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>x</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_yaw">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>100</y>
+     <width>50</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+     <weight>75</weight>
+     <italic>true</italic>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>dgree</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lable_y">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>40</y>
+     <width>50</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+     <weight>75</weight>
+     <italic>true</italic>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>y</string>
+   </property>
+  </widget>
+  <widget class="QDial" name="psi_2">
+   <property name="geometry">
+    <rect>
+     <x>410</x>
+     <y>170</y>
+     <width>152</width>
+     <height>148</height>
+    </rect>
+   </property>
+   <property name="minimum">
+    <number>-180</number>
+   </property>
+   <property name="maximum">
+    <number>180</number>
+   </property>
+  </widget>
+  <widget class="QSplitter" name="splitter_5">
+   <property name="geometry">
+    <rect>
+     <x>566</x>
+     <y>17</y>
+     <width>45</width>
+     <height>301</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+   <widget class="QSlider" name="port_thrust_2">
+    <property name="minimum">
+     <number>1200</number>
+    </property>
+    <property name="maximum">
+     <number>1800</number>
+    </property>
+    <property name="value">
+     <number>1500</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+    <property name="tickPosition">
+     <enum>QSlider::NoTicks</enum>
+    </property>
+   </widget>
+   <widget class="QSlider" name="stbd_thrust_2">
+    <property name="minimum">
+     <number>1200</number>
+    </property>
+    <property name="maximum">
+     <number>1800</number>
+    </property>
+    <property name="value">
+     <number>1500</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QDial" name="psi_d_2">
+   <property name="geometry">
+    <rect>
+     <x>410</x>
+     <y>17</y>
+     <width>152</width>
+     <height>149</height>
+    </rect>
+   </property>
+   <property name="minimum">
+    <number>-180</number>
+   </property>
+   <property name="maximum">
+    <number>180</number>
+   </property>
+   <property name="value">
+    <number>0</number>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
