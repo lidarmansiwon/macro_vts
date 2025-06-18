@@ -3,16 +3,20 @@
     name="MacroVTS"
     type="macro_vts.vts.MacroVTS"
     base_class_type="rqt_gui_py::Plugin">
+
     <description>Macro VTS RQt plugin</description>
-  </class>
+
     <qtgui>
-      <group>
-        <label>Visualization</label>
-        <icon type="theme">folder</icon>
-        <statustip>Plugins related to visualization</statustip>
-      </group>
       <label>MACROVTS</label>
-      <icon type="theme">utilities-system-monitor</icon>
+      <icon>resource/icon.png</icon>  <!-- 사용자 정의 아이콘 경로 -->
       <statustip>MACROVTS</statustip>
     </qtgui>
+
+    <group>
+      <label>Visualization</label>
+      <icon type="theme">folder</icon>
+      <statustip>Plugins rezlated to visualization</statustip>
+    </group>
+
+  </class>
 </library>

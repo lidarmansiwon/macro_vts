@@ -48,8 +48,10 @@ class VTSWidget(QWidget):
         # UI 요소 초기화
         self.lcd_number_pos_x.display(0.0)
         self.lcd_number_pos_y.display(0.0)
-        self.lcd_number_vel.display(0.0)
+        self.lcd_number_vel_u.display(0.0)
+        self.lcd_number_vel_v.display(0.0)
         self.lcd_number_yaw.display(0.0)
+        self.lcd_number_psi_d.display(0.0)
         self.psi_2.setValue(0)
         self.psi_d_2.setValue(0)
         self.port_thrust_2.setValue(1500)
@@ -75,7 +77,8 @@ class VTSWidget(QWidget):
         self.lcd_number_pos_y.display(round(self.navigation_msg.y, 2))
 
         # 속도 (m/s)
-        self.lcd_number_vel.display(round(self.navigation_msg.u, 2))
+        self.lcd_number_vel_u.display(round(self.navigation_msg.u, 2))
+        self.lcd_number_vel_v.display(round(self.navigation_msg.u, 2))
 
         # 현재 ψ (degree)
         psi_deg = self.navigation_msg.psi
@@ -85,6 +88,8 @@ class VTSWidget(QWidget):
         # 목표 ψ (degree)
         desired_psi_deg = self.guidance_msg.desired_psi
         self.psi_d_2.setValue(int(desired_psi_deg))
+        self.lcd_number_psi_d.display(round(desired_psi_deg, 1))
+
 
         # 추진기 출력
         self.port_thrust_2.setValue(int(self.control_msg.command_pwm_port))
