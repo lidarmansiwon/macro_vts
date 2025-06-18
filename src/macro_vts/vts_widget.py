@@ -77,13 +77,13 @@ class VTSWidget(QWidget):
         # 속도 (m/s)
         self.lcd_number_vel.display(round(self.navigation_msg.u, 2))
 
-        # 현재 ψ (degree), 입력값은 rad일 경우 deg 변환 필요
-        psi_deg = self.navigation_msg.psi * 180.0 / 3.141592
+        # 현재 ψ (degree)
+        psi_deg = self.navigation_msg.psi
         self.psi_2.setValue(int(psi_deg))
         self.lcd_number_yaw.display(round(psi_deg, 1))
 
         # 목표 ψ (degree)
-        desired_psi_deg = self.guidance_msg.desired_psi * 180.0 / 3.141592
+        desired_psi_deg = self.guidance_msg.desired_psi
         self.psi_d_2.setValue(int(desired_psi_deg))
 
         # 추진기 출력
