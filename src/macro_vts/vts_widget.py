@@ -60,16 +60,17 @@ class VTSWidget(QWidget):
         self.port_thrust_2.setValue(1500)
         self.stbd_thrust_2.setValue(1500)
 
-        # self.ui.plot_widget는 Qt Creator에서 만든 빈 QWidget
         layout = QtWidgets.QVBoxLayout(self.plot_widget)
         self.plot = pg.PlotWidget()
         layout.addWidget(self.plot)
-
-        # Plot 설정
+        
+        # 비율 고정 (1:1)
+        self.plot.setAspectLocked(True)
+        
         self.plot.setLabel('left', 'Y Position (m)')
         self.plot.setLabel('bottom', 'X Position (m)')
         self.plot.showGrid(x=True, y=True)
-        self.plot_curve = self.plot.plot([], [], pen='g')  # 선 추가
+        self.plot_curve = self.plot.plot([], [], pen='g')
 
         # 초기 데이터
         self.x_data = []
