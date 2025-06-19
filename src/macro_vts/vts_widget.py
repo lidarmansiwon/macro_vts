@@ -6,8 +6,11 @@ from ament_index_python.resources import get_resource
 from python_qt_binding import loadUi
 from python_qt_binding.QtCore import QTimer
 from python_qt_binding.QtWidgets import QWidget
+from PyQt5 import QtWidgets
 import rclpy
 from rclpy.qos import QoSProfile
+import pyqtgraph as pg
+from pyqtgraph import PlotWidget
 from mk3_msgs.msg import GuidanceType, NavigationType, ControlType
 
 
@@ -57,6 +60,21 @@ class VTSWidget(QWidget):
         self.port_thrust_2.setValue(1500)
         self.stbd_thrust_2.setValue(1500)
 
+        # self.ui.plot_widget는 Qt Creator에서 만든 빈 QWidget
+        layout = QtWidgets.QVBoxLayout(self.plot_widget)
+        self.plot = pg.PlotWidget()
+        layout.addWidget(self.plot)
+
+        # Plot 설정
+        self.plot.setLabel('left', 'Y Position (m)')
+        self.plot.setLabel('bottom', 'X Position (m)')
+        self.plot.showGrid(x=True, y=True)
+        self.plot_curve = self.plot.plot([], [], pen='g')  # 선 추가
+
+        # 초기 데이터
+        self.x_data = []
+        self.y_data = []
+
         # 타이머 시작
         self.update_timer = QTimer(self)
         self.update_timer.timeout.connect(self.update_indicators)
@@ -64,6 +82,9 @@ class VTSWidget(QWidget):
 
     def get_navigation(self, msg):
         self.navigation_msg = msg
+        x = self.navigation_msg.x
+        y = self.navigation_msg.y
+        self.update_plot(x, y)
 
     def get_control(self, msg):
         self.control_msg = msg
@@ -94,6 +115,12 @@ class VTSWidget(QWidget):
         # 추진기 출력
         self.port_thrust_2.setValue(int(self.control_msg.command_pwm_port))
         self.stbd_thrust_2.setValue(int(self.control_msg.command_pwm_stbd))
+
+
+    def update_plot(self, x, y):
+        self.x_data.append(x)
+        self.y_data.append(y)
+        self.plot_curve.setData(self.x_data, self.y_data)
 
     def shutdown_widget(self):
         self.update_timer.stop()

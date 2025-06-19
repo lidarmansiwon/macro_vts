@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>663</width>
-    <height>451</height>
+    <width>1350</width>
+    <height>684</height>
    </rect>
   </property>
   <property name="autoFillBackground">
@@ -353,6 +353,22 @@
      <number>0</number>
     </property>
    </widget>
+  </widget>
+  <widget class="QWidget" name="plot_widget" native="true">
+   <property name="geometry">
+    <rect>
+     <x>669</x>
+     <y>20</y>
+     <width>641</width>
+     <height>631</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
   </widget>
  </widget>
  <resources/>
