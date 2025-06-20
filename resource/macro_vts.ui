@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1350</width>
-    <height>684</height>
+    <width>1522</width>
+    <height>940</height>
    </rect>
   </property>
   <property name="autoFillBackground">
@@ -354,21 +354,130 @@
     </property>
    </widget>
   </widget>
-  <widget class="QWidget" name="plot_widget" native="true">
+  <widget class="QTabWidget" name="tabWidget">
    <property name="geometry">
     <rect>
-     <x>669</x>
-     <y>20</y>
-     <width>641</width>
-     <height>631</height>
+     <x>660</x>
+     <y>10</y>
+     <width>851</width>
+     <height>911</height>
     </rect>
    </property>
-   <property name="sizePolicy">
-    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-     <horstretch>0</horstretch>
-     <verstretch>0</verstretch>
-    </sizepolicy>
+   <property name="currentIndex">
+    <number>1</number>
    </property>
+   <widget class="QWidget" name="tab">
+    <attribute name="title">
+     <string>Position Plot</string>
+    </attribute>
+    <widget class="QWidget" name="plot_widget" native="true">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>851</width>
+       <height>781</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="reset_button">
+     <property name="geometry">
+      <rect>
+       <x>670</x>
+       <y>790</y>
+       <width>170</width>
+       <height>48</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Reset</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_2">
+    <attribute name="title">
+     <string>Edit Param</string>
+    </attribute>
+    <widget class="QSplitter" name="splitter_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>461</width>
+       <height>231</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <widget class="QWidget" name="">
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QLCDNumber" name="lcd_kp"/>
+       </item>
+       <item>
+        <widget class="QLCDNumber" name="lcd_ki"/>
+       </item>
+       <item>
+        <widget class="QLCDNumber" name="lcd_kd"/>
+       </item>
+       <item>
+        <widget class="QLCDNumber" name="lcd_std_pwm"/>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="">
+      <layout class="QFormLayout" name="formLayout">
+       <item row="0" column="0">
+        <widget class="QDoubleSpinBox" name="kp"/>
+       </item>
+       <item row="0" column="1">
+        <widget class="QPushButton" name="kp_setB">
+         <property name="text">
+          <string>set Kp</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QPushButton" name="ki_setB">
+         <property name="text">
+          <string>set Ki</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QDoubleSpinBox" name="kd"/>
+       </item>
+       <item row="2" column="1">
+        <widget class="QPushButton" name="kd_setB">
+         <property name="text">
+          <string>set Kd</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QDoubleSpinBox" name="ki"/>
+       </item>
+       <item row="3" column="1">
+        <widget class="QPushButton" name="std_pwm_setB">
+         <property name="text">
+          <string>set Std PWM</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QDoubleSpinBox" name="std_pwm"/>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </widget>
   </widget>
  </widget>
  <resources/>
