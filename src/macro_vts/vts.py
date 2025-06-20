@@ -16,13 +16,6 @@ class MacroVTS(Plugin):
         # Create widget instance and pass ROS 2 node
         self._widget = VTSWidget(context.node)
 
-        # 아이콘 강제 지정
-        # self._widget.setWindowIcon(QIcon(os.path.join(get_package_share_directory('macro_vts'), 'resource', 'icon.png')))
-        self._widget.setWindowIcon(QIcon('/home/siwon/study_ws/src/macro_vts/resource/icon.png'))
-
-        # rqt에 플러그인으로 등록
-        context.add_widget(self._widget)
-
         # Multi-instance 대응 (rqt에서 같은 plugin을 여러 번 열 때)
         if context.serial_number() > 1:
             self._widget.setWindowTitle(self._widget.windowTitle() + f' ({context.serial_number()})')
